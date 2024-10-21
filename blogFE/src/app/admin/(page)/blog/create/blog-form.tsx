@@ -14,7 +14,7 @@ import { toast } from "react-toastify";
 import { z } from "zod";
 import KeywordFieldArray from "./keyword-field-array";
 import PreviewImage from "@/components/preview-image";
-import CKEditor5 from "@/components/ckeditor5/ckeditor5";
+import CKEditor5 from "@/components/ckeditor5";
 
 interface IProps {
   id?: string | null;
