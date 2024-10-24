@@ -23,6 +23,7 @@ const HomePage = async ({
     sendRequest<TResponse<TBlog[]>>({
       url: `/blog-api/blogs/carousel`,
       method: "GET",
+      nextOption: { cache: 'no-store' }
     }),
     sendRequest<TResponse<TPagination<TBlog[]>>>({
       url: `/blog-api/blogs-pagination`,
@@ -31,6 +32,7 @@ const HomePage = async ({
         size: 10,
         page: searchParams?.page ?? "1",
       },
+      nextOption: { cache: 'no-store' }
     }),
   ]);
 

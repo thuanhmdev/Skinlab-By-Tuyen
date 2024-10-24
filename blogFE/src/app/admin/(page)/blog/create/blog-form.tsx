@@ -14,7 +14,9 @@ import { toast } from "react-toastify";
 import { z } from "zod";
 import KeywordFieldArray from "./keyword-field-array";
 import PreviewImage from "@/components/preview-image";
-import CKEditor5 from "@/components/ckeditor5";
+import dynamic from "next/dynamic";
+
+const CKEditor5 = dynamic(() => import("@/components/ckeditor5"), { ssr: false });
 
 interface IProps {
   id?: string | null;
@@ -22,9 +24,6 @@ interface IProps {
 
 const BlogForm = ({ id }: IProps) => {
   const { data: session } = useSession();
-
-  const [loading, setLoading] = useState(true);
-  const [blogImageUrl, setBlogImageUrl] = useState("");
   const router = useRouter();
 
   useEffect(() => {
@@ -54,11 +53,10 @@ const BlogForm = ({ id }: IProps) => {
         } else {
           toast.error("Server Error...");
         }
-        setLoading(false);
+
       };
       fetchDataBlog(id as string);
     } else {
-      setLoading(false);
     }
   }, [id, session]);
 

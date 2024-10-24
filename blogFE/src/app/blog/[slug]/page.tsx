@@ -78,10 +78,12 @@ const page = async ({ params }: any) => {
     sendRequest<TResponse<TBlog>>({
       url: `/blog-api/blogs/${getIdFromSlug(params.slug)}`,
       method: "GET",
+      nextOption: { cache: 'no-store' }
     }),
     sendRequest<TResponse<TBlog[]>>({
       url: `/blog-api/blogs/recent`,
       method: "GET",
+      nextOption: { cache: 'no-store' }
     }),
   ]);
 
