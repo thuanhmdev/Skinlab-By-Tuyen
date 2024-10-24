@@ -75,7 +75,7 @@ const BlogCarousel = ({ blogs = [] }: IProps) => {
             <div className="absolute inset-0 bg-neutral-800/45"></div>
             <div className="relative z-1 h-full flex flex-col justify-center items-center gap-y-3 ">
               <h3
-                className="text-base md:text-xl lg:text-2xl xl:text-3xl text-white font-bold cursor-pointer"
+                className="text-base text-center md:text-xl lg:text-2xl xl:text-3xl text-white font-bold cursor-pointer"
                 onClick={() => handleNavigate(blogs?.[0])}
               >
                 {blogs?.[0].title ?? ""}
@@ -104,7 +104,7 @@ const BlogCarousel = ({ blogs = [] }: IProps) => {
                   <div className="absolute inset-0 bg-neutral-800/45"></div>
                   <div className="relative z-1 h-full flex flex-col justify-center items-center gap-y-3 ">
                     <h3
-                      className="text-base md:text-xl lg:text-2xl xl:text-3xl text-white font-bold cursor-pointer"
+                      className="text-base text-center md:text-xl lg:text-2xl xl:text-3xl text-white font-bold cursor-pointer"
                       onClick={() => handleNavigate(item)}
                     >
                       {item.title ?? ""}
@@ -113,7 +113,7 @@ const BlogCarousel = ({ blogs = [] }: IProps) => {
                       <p className="mb-0 text-white">
                         {item.blogger.name ?? ""}
                       </p>
-                      <p className="mb-0 text-white text-[10px] sm:text-[12px] md:text-sm lg:text-base">
+                      <p className="mb-0 text-white  text-[10px] sm:text-[12px] md:text-sm lg:text-base">
                         Ngày đăng:{" "}
                         {hasMounted && convertTimeStampeToDate(item.createdAt)}
                       </p>
