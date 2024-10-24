@@ -6,7 +6,8 @@ WORKDIR /src
 
 RUN npm install pnpm -g
 
-RUN pnpm install --save-dev style-loader css-loader
+# RUN pnpm install --save-dev style-loader css-loader
+RUN pnpm install
 
 RUN pnpm build
 
